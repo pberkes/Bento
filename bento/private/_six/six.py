@@ -230,7 +230,10 @@ else:
     def b(s):
         return s
     def u(s):
-        return unicode(s, "unicode_escape")
+        if type(s) is not unicode:
+            return unicode(s, "unicode_escape")
+        else:
+            return s
     import StringIO
     StringIO = BytesIO = StringIO.StringIO
 _add_doc(b, """Byte literal""")
