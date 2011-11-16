@@ -55,7 +55,7 @@ def common_description(pkg_info):
 def unicode_path(path, encoding=sys.getfilesystemencoding()):
     if isinstance(path, six.text_type):
         return path
-    return six.u(path, encoding)
+    return unicode(path, encoding)
 
 def write(dct, path):
     p = plistlib.Plist()
